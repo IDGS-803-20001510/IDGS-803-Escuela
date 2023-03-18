@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="col-xs-6 text-center">
+    {% from "_macros.html" import render_field %}
+    <form action="/Diccionario" method="post" novalidate>
+        {{form.csrf_token}}
+        <h1>Diccionario</h1>
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        {{render_field(form.espanol)}}
+        {{render_field(form.ingles)}}
+        <input type="submit" class="btn btn-default btn-primary" value="Registrar">
+        {% if mensaje %}
+        <div class="alert alert-success" role="alert">
+            {{ mensaje }}
+        </div>
+        {% endif %}
+    </form>
+</div>
+<div class="col-xs-6 text-center divs">
+    <div class="control-group">
+        <form action="DiccionarioV" method="POST">
+            <div class="controls">
+                <div>
+                    <label>
+                        Español <input type="radio" id="opcE" name="idioma" value="espanol" required>
+                    </label>
+                </div>
+                <div>
+                    <label for="opcI" class="">
+                        Ingles <input type="radio" id="opcI" name="idioma" value="ingles">
+                    </label>
+
+                </div> <br>
+                <div>
+                    <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+                    {{render_field(form.palabra)}}
+                    <input type="submit" class="btn btn-default btn-primary" value="Buscar">
+                    <a class="btn btn-default btn-primary" type="button" href="Diccionario">Reiniciar</a> <br> <br>
+                </div>
+                <div>
+                    <h1>La palabra resultante es: <h1 style="color: red;">{{palabra}}</h1>
+                    </h1>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="">
+
+</div>
+{% endblock %}

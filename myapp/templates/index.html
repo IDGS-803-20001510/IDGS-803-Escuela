@@ -1,0 +1,17 @@
+{% extends "layout.html" %} 
+ 
+{% block content%}
+  {%from "_macros.html" import render_field%}
+
+  <div class="container text-center">
+   <div class="row">
+       <form name="sent" action="/" id="form1" method="POST">
+           <h1>Bienvenido a la gestión de la escuela</h1>
+           <h3 style="color: red;">Selecciona la opción a la que quieras ingresar</h3>
+           <a href="/getAlum" class="btn btn-primary">Alumos</a>
+           <a href="/getMaestros" class="btn btn-primary">Maestros</a>
+       </form>
+   </div>
+  </div>
+
+{% endblock %}

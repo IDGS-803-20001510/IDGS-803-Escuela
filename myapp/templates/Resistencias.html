@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="control_group">
+    <div class="controls text-center">
+        <form action="/Resistencia" method="post">
+            {{ form.csrf_token }}
+            <h1>Calculadora de resistencias</h1>
+            <div class="control-group" style="float: left;">
+                <img src="../static/img/Resistencias.jpg" alt="">
+            </div>
+            <div class="col-xs-6">
+                {{ form.csrf_token }}
+                <label>{{ form.banda1.label }}</label>
+                {{ form.banda1(class_="form-control") }}
+                {{ form.banda2(class_="form-control") }}
+                {{ form.banda3(class_="form-control") }}
+                <h5>Elige la tolerancia:</h5>
+                <div>
+                    {{ form.tolerancia.label }}<br>
+                    {% for subfield in form.tolerancia %}
+                    {{ subfield }}
+                    {{ subfield.label }}
+                    <br>
+                    {% endfor %}
+                </div>
+                <button type="submit" class="btn btn-default btn-primary">
+                    <i class="icon-book icon-white"></i> Procesar
+                </button>
+                <a class="btn btn-default btn-primary" type="button" href="Resistencia">Reiniciar</a> <br> <br>
+
+
+                <table class="table table-bordered border-primary">
+                    <thead>
+                        <tr>
+                            <th scope="col">Col Banda1</th>
+                            <th scope="col">Col Banda2</th>
+                            <th scope="col">Col Banda3</th>
+                            <th scope="col">Tolerancia</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Minimo</th>
+                            <th scope="col">Maximo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="background-color: {{banda1}}; ">{{nuevoColorB1}}</td>
+                            <td style="background-color: {{banda2}}; ">{{nuevoColorB2}}</td>
+                            <td style="background-color: {{banda3}}; ">{{nuevoColorB3}}</td>
+                            <td style="background-color: {{tolerancia}}; ">{{nuevoColorT}}</td>
+                            <td>{{valor}} Ω Ohms</td>
+                            <td>{{minimo}}</td>
+                            <td>{{maximo}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </form>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}

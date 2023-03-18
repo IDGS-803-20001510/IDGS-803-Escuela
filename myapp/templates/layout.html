@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+
+    <title>Document</title>
+    <style>
+        body {
+            padding-top: 60px;
+            padding-left: 20px;
+            padding-right: 20px;
+            color: blue;
+        }
+
+        .tr-head {
+            background: #ddf0d8;
+        }
+
+        .divs {
+            border-color: gray;
+            border-width: 1px;
+            border-style: solid;
+            border-color: green;
+            background-color: yellow;
+        }
+
+        .color{
+            background-color: orangered;
+        }
+
+        #celda-banda1 {
+            background-color: var(--celda-color);
+        }
+        .color-select option[value="{{ banda1 }}"] {background-color: {{ banda1 }};}
+        .color-select option[value="{{ banda2 }}"] {background-color: {{ banda2 }};}
+        .color-select option[value="{{ banda3 }}"] {background-color: {{ banda3 }};}
+
+    </style>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap-responsive.min.css">
+</head>
+
+<body>
+    <div class="navbar navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a href="/" class="brand">
+                    <img src="../static/img/Utl logo.jpg" height="50px" width="50 px" alt="">
+                    UTL-IDGS
+                </a>
+                <ul class="nav" style="float: right;">
+                    <li>
+                        <a>
+                            <i class="icon-user icon-white"></i>
+                            Alexis Alfredo Prado Ojeda
+                        </a>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </div> <br> <br>
+    <div class="container ">
+
+        {%with messages = get_flashed_messages()%}
+            {%if messages%}
+            {%for message in messages%}
+            <div class="alert alert-success">
+                {{message}}
+            </div>
+            {%endfor%}
+            {%endif%}
+        {%endwith%}
+
+    </div>
+     {% block content %}
+    
+    {% endblock %} 
+</body>
+
+</html>
+

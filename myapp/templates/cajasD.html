@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form action="/cajasD" method="POST">
+    <div class="control_group">
+        <div class="controls text-center">
+            <div class="control-group">
+                <label for="txtCantCajas" class="control-label">Cajas:</label>
+                <div class="controls">
+                    <input class="color" type="text" name="txtCantCajas" placeholder="Introduzca el número de cajas a dibujar" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-default btn-primary">
+                <i class="icon-book icon-white"></i> Procesar
+            </button>
+            <a class="btn btn-default btn-primary" type="button" href="cajasD">Reiniciar</a> <br> <br>
+        </div>
+    </div> <br>
+</form>
+    <div class="control_group divs">
+        <div class="controls">
+            <div class="text-center">
+                {% if cant > 0 %}
+                <form action="cajasDDib" method="POST">
+                    {%from "_macros.html" import render_input2%}
+
+                    {% for i in range(1, cant+1) %}
+                        {{render_input2(i)}}
+                    {% endfor %}
+                    <div class="controls">
+                        <input value={{cant}} name="txtNum"  hidden>
+                        <button type="submit" class="btn btn-default btn-success">
+                            <i class="icon-book icon-white"></i> Calcular
+                        </button>
+                    </div>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

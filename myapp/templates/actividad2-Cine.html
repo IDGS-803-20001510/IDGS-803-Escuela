@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <title>Cinepolis</title>
+    <style>
+        .centrado {
+            width: 400px;
+            background: #0553a1;
+            padding: 30px;
+            margin: auto;
+            margin-top: 30px;
+            border-radius: 4px;
+            font-family: 'calibri';
+            color: #fff;
+            box-shadow: 7px 13px 37px #000;
+        }
+    </style>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap-responsive.min.css">
+</head>
+
+<body>
+    <div class="centrado">
+        <header class="text-center">
+            <h1 style="color: yellow;">Bienvenido al sistema de Cinepolis!!!!</h1>
+            <img src="../static/img/cinepolis.png" alt="">
+        </header><br>
+        <section class="border border-5 border-warning">
+            <form class="form-horizontal" action="/ticket" method="POST">
+                <div class="control-group">
+                    <label for="" class="control-label">Nombre:</label>
+                    <div class="controls">
+                        <input type="text" name="txtNombre" placeholder="Ingresa el nombre">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="" class="control-label">Cantidad Compradores:</label>
+                    <div class="controls">
+                        <input type="text" name="txtCantidad" placeholder="Ingresa la cantidad de compradores">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="" class="control-label">Tarjeta Cineco:</label>
+                    <div class="controls">
+                        <div style="float: left;">
+                            <label for="" class="">Si</label>
+                            <input type="radio" name="opc" value="1" required>
+                        </div>
+                        <div style="float: left;">
+                            <label for="" class="">No</label>
+                            <input type="radio" name="opc" value="2">
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="" class="control-label">Cantidad de Boletas:</label>
+                    <div class="controls">
+                        <input type="text" name="txtCantidadB" placeholder="Ingresa la cantidad de boletas a comprar">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn btn-default btn-primary">
+                            <i class="icon-book icon-white"></i> Procesar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
+
+</html>

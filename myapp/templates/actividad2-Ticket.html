@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <title>Cinepolis</title>
+    <style>
+        .centrado {
+            width: 400px;
+            background: #0553a1;
+            padding: 30px;
+            margin: auto;
+            margin-top: 30px;
+            border-radius: 4px;
+            font-family: 'calibri';
+            color: #fff;
+            box-shadow: 7px 13px 37px #000;
+        }
+    </style>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap-responsive.min.css">
+</head>
+<body>
+    <div class="centrado">
+        <header class="text-center">
+            <h1>Ticket</h1>
+        </header>
+        <div class="control-group text-center" >
+            <label for="" class="control-label">Nombre: <strong style="color: deeppink;">{{nombre}}</strong></label>
+            <label for="" class="control-label">Cantidad maxima de boletas permitidas: <strong style="color: deeppink;">{{per}}</strong></label>
+            <label for="" class="control-label">Cantidad de boletas compradas: <strong style="color: deeppink;">{{cantidadB}}</strong></label>
+            <label for="" class="control-label">Total a pagar: <strong style="color: deeppink;">{{res}}</strong></label>
+            <button type="submit" class="btn btn-default btn-primary">
+                <a href="http://127.0.0.1:5000/cine" style="text-decoration: none; color: #fff;" >Regresar</a>
+            </button>
+        </div>
+    </div>
+</body>
+</html> 

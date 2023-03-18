@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="control_group divs">
+        <div class="controls">
+            <div id="txtResultadoCalculos">
+                <div class="text-center">
+                    <h4>El número Mayor: <b style="color: red;">{{numMayor}}</b> </h4> <br/>
+                    <h4>El número Menor: <b style="color: red;">{{numMenor}}</b> </h4> <br/>
+                    <h4>El promedio es: <b style="color: red;">{{promedio}}</b>  </h4> <br/>
+                    <div class="text-center">
+                        {% for numero, cant in contador.items()%}
+                            {% if cant > 1: %}
+                            <h4>El número <b style="color: red;">{{numero}}</b> se repitio <b style="color: red;">{{cant}}</b> veces</h4>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <a class="btn btn-default btn-primary" type="button" href="cajasD">Regresar</a> <br> <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

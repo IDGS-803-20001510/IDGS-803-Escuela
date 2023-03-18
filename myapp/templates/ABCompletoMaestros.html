@@ -1,0 +1,41 @@
+{% extends "layout.html" %} 
+ 
+{% block content%}
+  {%from "_macros.html" import render_field%}
+
+  <div class="container">
+   <div class="row">
+    <a href="/insertarMaes" class="btn btn-warning"><i class="icon-pencil icon-white"></i>Agregar</a>
+    <a href="/getAlum" class="btn btn-primary">Alumos</a>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr class="tr_head">
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Materia</th>
+                <th>Eliminar</th>
+                <th>Modificar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for maes in maestro%}
+            <tr>
+                <td>{{maes[1]}}</td>
+                <td>{{maes[2]}}</td>
+                <td>{{maes[3]}}</td>
+                <td>{{maes[4]}}</td>
+                <td><a href="eliminarMaes?id={{maes[0]}}" class="btn btn-danger">
+                    <i class="icon-remove icon-white"></i>Eliminar
+                </a></td>
+                <td><a href="modificarMaes?id={{maes[0]}}" class="btn btn-warning">
+                    <i class="icon-pencil icon-white"></i>Modificar
+                </a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+   </div>
+  </div>
+
+{% endblock %}
